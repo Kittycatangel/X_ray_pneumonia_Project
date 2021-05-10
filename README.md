@@ -16,16 +16,16 @@ https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia.
 
 The data images in kaggle was already split into train, validation and test data. 
 
-## Train Data
+### Train Data
 3543 validated images filenames belonging to 2 classes.
 
-## Validation Data
+### Validation Data
 1162 validated images filenames belonging to 2 classes.
 
-## Test Data 
+### Test Data 
 1148 validated images filenames belonging to 2 classes.
 
-## Methodology
+# Methodology
 
 We used Convolutional neural network (CNN) to build and automated method to detect pneumonia X-ray from nromal X-ray images. CNN is a powerful tool due to its ability to extract features and learn to distinguish between different classes such as positive and negative, infected and healthy, or in this case, Pneumonia and Normal.
 
@@ -33,13 +33,13 @@ For large datasets and deep networks, kernel regularization is a must. You can u
 
 In Keras, you build a CNN architecture using the following process:
 
-1)Reshape the input data into a format suitable for the convolutional layers.
+1) Reshape the input data into a format suitable for the convolutional layers.
 
-2)For class-based classification, one-hot encode the categories using the to_categorical() function.
+2) For class-based classification, one-hot encode the categories using the to_categorical() function.
 
-3)Build the model  by initializing a Sequential model. 
+3) Build the model  by initializing a Sequential model. 
 
-4)  Add convolutional layers. Convolutional layers apply a filter to input and create a feature map that summarizes the presence of detected features in the input.  The input image gets smaller and smaller as it progresses through the network but it also gets deeper and deeper with feature map. I add one Conv2D layer with a filter/kernel size of 3 x 3, adding ReLU activation function to set negative values to zero, and specify input_shape = (150, 150, 3).
+4) Add convolutional layers. Convolutional layers apply a filter to input and create a feature map that summarizes the presence of detected features in the input.  The input image gets smaller and smaller as it progresses through the network but it also gets deeper and deeper with feature map. I add one Conv2D layer with a filter/kernel size of 3 x 3, adding ReLU activation function to set negative values to zero, and specify input_shape = (150, 150, 3).
 
 5) Add Pooling layer is sandwiched between two successive convolutional layers to reduce the spatial size of the convoluted feature/ parameters in the network. MaxPooling is the most common pooling methods to reduce image size by pooling the most important feature. Here I use MaxPool2D with a pool size of 2 or 3, meaning it divides each spatial dimension by a factor of 2 or 3.
 
@@ -47,15 +47,15 @@ In Keras, you build a CNN architecture using the following process:
 
 7) Add a “flatten” layer which prepares a vector for the fully connected layers. Flatten layer is added to convert each input image into a 1D array: if it receives input data X, it computes X.reshape(-1, 1). The flatten data that comes out of the convolutions and is then fed to the fully connected layers.
 
-8)Add one or more fully hidden dense connected layer. Typically you will follow each fully connected layer with a dropout layer.  
+8) Add one or more fully hidden dense connected layer. Typically you will follow each fully connected layer with a dropout layer.  
 
 9) Add 1 output hidden Dense layer with one neuron using activation = 'sigmoid'.
 
 10) Compile the model using model.compile()
 
-11)Train the model using model.fit().
+11) Train the model using model.fit().
 
-12)Use model.predict() to generate a prediction.
+12) Use model.predict() to generate a prediction.
 
 Sometimes, I add callbacks to monitor a specific parameter of the model, in this case, val_acc. Since I use a validation set during training, I set save_best_only = True in ModelCheckpoint to specify that the model will only be saved when its performance on the validation set is best.
 
@@ -73,9 +73,12 @@ Validation images and their corresponding true labels (we use these labels only 
 ## Model 0: Visualization of loss and accuracy of training and validation data
  
  ![image](https://user-images.githubusercontent.com/53411455/117719412-5f389600-b1ab-11eb-8484-ed4edf7cb94b.png)
+ ![image](https://user-images.githubusercontent.com/53411455/117720463-abd0a100-b1ac-11eb-88d7-0230affdf263.png)
 
 ## Model 1: Visualization of loss and accuracy of training and validation data
   ![image](https://user-images.githubusercontent.com/53411455/117719618-9b6bf680-b1ab-11eb-9cd8-c529a8a26165.png)
+  ![image](https://user-images.githubusercontent.com/53411455/117720494-b4c17280-b1ac-11eb-9b1b-44cee530f4e8.png)
+
   
 # Conclusion
 
