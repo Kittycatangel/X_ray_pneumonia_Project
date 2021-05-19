@@ -25,6 +25,11 @@ The data images in kaggle was already split into train, validation and test data
 ### Test Data 
 1148 validated images filenames belonging to 2 classes.
 
+The data folder can be found in this repository. The colaboratory notebook can be found as "Pneumonia_Detection.ipynb" in Pneumonia_Diagnosis_Project folder in this repository.
+The saved models can be found in "saved models" folder in in Pneumonia_Diagnosis_Project folder. Note that only that model 2, 6, 9, 12, 14, 15 are not saved and not present in saved models folder. These models did not performed good and therefore deemed not useful for future purposes.
+
+A presentation with best results can be found in Pneumonia Detection by Deep Learning.pdf in this repository. 
+
 # Methodology
 
 We used Convolutional neural network (CNN) to build and automated method to detect pneumonia X-ray from nromal X-ray images. CNN is a powerful tool due to its ability to extract features and learn to distinguish between different classes such as positive and negative, infected and healthy, or in this case, Pneumonia and Normal.
