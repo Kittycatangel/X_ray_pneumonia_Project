@@ -91,7 +91,7 @@ Validation images and their corresponding true labels (we use these labels only 
 
 This study presents a deep CNN based approach for the automatic detection of Pneumonia vs Normal X-ray images.
 
-We have demonstrated how to distinguish between Normal and Pneumonia Chest X-Rays with our model having an test accuracy of 89%-92% and a recall of 94%-99%.
+We have demonstrated how to distinguish between Normal and Pneumonia Chest X-Rays with our model having an test accuracy of 89%-92% and a recall of 94%-100%.
 
 The best model which gave promising results are: Model 0 , Model 4 & Model 11.
 
